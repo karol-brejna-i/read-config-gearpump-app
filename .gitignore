@@ -1,0 +1,11 @@
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+*.iml
+.idea/
+*.ipr
+*.iws
+target
