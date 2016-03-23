@@ -30,8 +30,7 @@ public class SplitTask extends Task {
         super(taskContext, userConf);
         System.out.println("grep:::::taskContext.system().settings().config(): " + taskContext.system().settings().config());
         System.out.println("grep:::::userConf: " + userConf);
-        System.out.println("grep:::::userConf.getValue(root): " + userConf.getString("fistKey"));
-
+        System.out.println("grep:::::userConf.getValue(firstKey): " + userConf.getString("firstKey"));
     }
 
     private Long now() {
@@ -41,7 +40,7 @@ public class SplitTask extends Task {
     @Override
     public void onStart(StartTime startTime) {
         System.out.println("grep:::::userConf: " + userConf);
-        System.out.println("grep:::::userConf.getString(fistKey): " + userConf.getString("fistKey"));
+        System.out.println("grep:::::userConf.getString(firstKey): " + userConf.getString("firstKey"));
         self().tell(new Message("start", now()), self());
     }
 
