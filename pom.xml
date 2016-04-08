@@ -6,7 +6,7 @@
 
     <groupId>org.trustedanalytics.examples.gearpump</groupId>
     <artifactId>read-config</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
     <properties>
         <gearpumpVersion>0.7.6</gearpumpVersion>
     </properties>
@@ -79,37 +79,13 @@
             <groupId>com.github.intel-hadoop</groupId>
             <artifactId>gearpump-core_2.11</artifactId>
             <version>${gearpumpVersion}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.github.intel-hadoop</groupId>
             <artifactId>gearpump-streaming_2.11</artifactId>
             <version>${gearpumpVersion}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.4</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>16.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
-            <version>3.2.2</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.10</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

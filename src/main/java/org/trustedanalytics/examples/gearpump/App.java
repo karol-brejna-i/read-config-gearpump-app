@@ -63,8 +63,10 @@ public class App {
         System.out.println("grep:::::appConfig" + appConfig.getString("firstKey").get());
 
         StreamApplication app = new StreamApplication("readConfig", appConfig, graph);
+        System.out.println("app : " + app);
 
         ClientContext masterClient = new ClientContext(akkaConf);
+        System.out.println("masterClient: " + masterClient);
         int appId = masterClient.submit(app);
         System.out.println("Application Id is " + Integer.toString(appId));
 
