@@ -44,8 +44,8 @@ public class App {
         System.out.println("Render config:");
         System.out.println(akkaConf.root().render(ConfigRenderOptions.concise()));
         System.out.println("=======================");
-        System.out.println("grep:::::akkaConf.getValue(\"tap\") = " + akkaConf.getValue("tap"));
-        System.out.println("grep:::::akkaConf.getAnyRef(\"tap\").getClass().getName()) = " + akkaConf.getAnyRef("tap").getClass().getName());
+        //System.out.println("grep:::::akkaConf.getValue(\"tap\") = " + akkaConf.getValue("tap"));
+        //System.out.println("grep:::::akkaConf.getAnyRef(\"tap\").getClass().getName()) = " + akkaConf.getAnyRef("tap").getClass().getName());
 
         int taskNumber = 1;
         Processor split = new Processor(SplitTask.class).withParallelism(taskNumber);
@@ -58,8 +58,9 @@ public class App {
         Partitioner partitioner = new HashPartitioner();
         graph.addEdge(split, partitioner, sum);
 
-        UserConfig appConfig = UserConfig.empty().withString("firstKey", akkaConf.getString("tap.key1")).withString("secondKey", akkaConf.getString("tap.key2"));
-        System.out.println("grep:::::appConfig.tap.key1" + akkaConf.getString("tap.key1"));
+        //UserConfig appConfig = UserConfig.empty().withString("firstKey", akkaConf.getString("tap.key1")).withString("secondKey", akkaConf.getString("tap.key2"));
+        UserConfig appConfig = UserConfig.empty().withString("firstKey", "tap.key1").withString("secondKey", "tap.key2");
+        //System.out.println("grep:::::appConfig.tap.key1" + akkaConf.getString("tap.key1"));
         System.out.println("grep:::::appConfig" + appConfig.getString("firstKey").get());
 
         StreamApplication app = new StreamApplication("readConfig", appConfig, graph);
